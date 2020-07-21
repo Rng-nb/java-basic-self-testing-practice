@@ -23,9 +23,10 @@ class ObjectTest {
         // Hint
         //  If you find it difficult, please check page 172 of "Core Java Vol 1", section 4.6.2.
         // <--start
-        final String expectedName = "expected";
-        final int expectedYearOfBirth = Integer.MAX_VALUE;
-        final LocalDate expectedRegisteredDate = LocalDate.now();
+        //without initial,the variable will have the default value
+        final String expectedName = null;
+        final int expectedYearOfBirth = 0;
+        final LocalDate expectedRegisteredDate = null;
         // --end-->
 
         assertEquals(expectedName, instance.getName());
@@ -48,7 +49,8 @@ class ObjectTest {
         //  `sameReference` and `instanceCreatedByMethod`.
         //
         // <--start
-        final Object expected = new Object();
+        //对象作为形参传递一份引用的拷贝
+        final Object expected = sameReference;
         // --end-->
 
         assertEquals(expected, objectReference);
@@ -66,7 +68,8 @@ class ObjectTest {
         // Hint
         //  If you find it difficult, please check page 164 of "Core Java Vol 1", section 4.5.
         // <--start
-        final String expected = "";
+        //对象作为形参传递一份引用的拷贝
+        final String expected = "Updated Name";
         // --end-->
 
         assertEquals(expected, instance.getName());
