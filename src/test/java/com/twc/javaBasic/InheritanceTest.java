@@ -14,7 +14,7 @@ class InheritanceTest {
         //  Please write down the class type directly.
         //
         // <--start
-        final Class<?> expectedSuperClass = null;
+        final Class<?> expectedSuperClass = Object.class;
         // --end-->
 
         assertEquals(expectedSuperClass, SimpleEmptyClass.class.getSuperclass());
@@ -29,7 +29,9 @@ class InheritanceTest {
         // Hint: check https://beginnersbook.com/2013/03/constructors-in-java/
         //
         // <--start
-        final String[] expected = {};
+        //the child class will call the super class's constructor
+        final String[] expected = {"SuperClassWithDefaultConstructor.constructor()",
+                                    "DerivedFromSuperClassWithDefaultConstructor.constructor()"};
         // --end-->
 
         String[] logs = instance.getLogs();
@@ -47,7 +49,8 @@ class InheritanceTest {
         //  You should write the answer directly.
         // Hint: https://beginnersbook.com/2014/01/method-overriding-in-java-with-example/
         // <--start
-        final String expectedName = "";
+        // the child class override the super class
+        final String expectedName = "DerivedFromBaseClassForOverriding";
         // --end-->
 
         assertEquals(expectedName, instance.getName());
@@ -59,7 +62,8 @@ class InheritanceTest {
 
         // TODO: You should write the answer directly.
         // <--start
-        final String expectedName = "";
+        //the child class call super.method
+        final String expectedName = "BaseClassForOverriding" + "->DerivedFromBaseClassForOverridingCallingSuper";
         // --end-->
 
         assertEquals(expectedName, instance.getName());
