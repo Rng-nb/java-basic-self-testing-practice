@@ -7,7 +7,8 @@ public class NameImpl implements WithName, Person {
         //  Please implement the method to pass the test.
         //
         // <--start
-        throw new RuntimeException("Not implemented");
+        //if the interface has two method with same name only override one method
+        return "Person";
         // --end-->
     }
 }
